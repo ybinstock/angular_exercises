@@ -1,0 +1,114 @@
+<div ng-controller="IndexController">
+<!--
+4) Create an array of objects called favoriteMovies
+and use the ng-repeat directive to iterate over the array
+of favoriteMovies.
+-->
+<!--
+6) Filter your ng-repeat of movies and order them by name
+and limit the number displayed to 3.
+-->
+<!--
+7) Create a custom filter to reverse the letters of the
+title of your favorite movies.
+
+!!! Also see filter.("reverse", ...) in site.js.coffee !!!
+-->
+<input type="text" ng-model="filter" placeholder="filter movies">
+<ul ng-init="favoriteMovies=['Terminator II', 'Slapshot', 'Big
+             Lebowski', 'Ace Ventura', 'Barton Fink', 'Home Alone']"
+    ng-show="showFavorites">
+  <li ng-repeat="movie in favoriteMovies | filter:filter |
+  orderBy:'valueOf()'| limitTo:3 | reverse">{{movie}}</li>
+</ul>
+
+<!--
+5) Add a form outside the ng-repeat in step 3 that allows
+you to change the background color of the application.
+
+!!! Also see ng-style directive in <body> tag in
+application.html.erb. !!!
+-->
+<form>
+  <input type="text" ng-model="style.color" placeholder="background color">
+</form>
+
+<!--
+8) Write a function called removeFavorite that removes a
+favorite movie from your array.
+-->
+<button ng-click="favoriteMovies.pop()">Remove favorite</button>
+
+<!--
+9) Include the text "I have {{favoriteMovies.length}}
+favorite(s)" and use ng-pluralize so that the text
+displays favorite when there is 1 movie and favorites
+in all other cases.
+-->
+<p>
+I have {{favoriteMovies.length}} 
+<ng-pluralize count="favoriteMovies.length"
+              when="{'1': 'favorite',
+                     'other': 'favorites'}">
+</ng-pluralize>
+</p>
+
+<!--
+10) Add a checkbox that allows the user to see the list
+of favorite movies when checked and hides the list of movies
+when unchecked.
+-->
+<label for="toggleShow">Show Favorites</label>
+<input
+   id="toggleShow"
+   type="checkbox"
+   ng-model="showFavorites"
+   ng-init="showFavorites=true">
+
+
+<!--
+11) Check out ng-keypress and create an input field
+and a counter that increments every time the user
+types a letter.
+-->
+<div ng-init="keyCount=0">
+  <h3>Count your keypresses!</h3>
+  <input type="text" ng-keypress="keyCount = keyCount + 1">
+  You've entered {{keyCount}} letters!
+</div>
+
+<!--
+12) Create a form that takes in a word and then hides
+it when the form is submitted.
+-->
+<h3>Hide a word for fun and profit!</h3>
+<form ng-init="hiddenWord=''" ng-submit="hiddenWord = word; word = '';">
+  <input type="text" ng-model="word" placeholder="word to be hidden">
+  <input type="submit" value="hide">
+</form>
+<!-- <p>Hidden word: {{hiddenWord}}</p> -->
+<!--
+Bonus 3) Use $watch to listen to when the secret word is typed and
+using your counter from exercise 10 show the secret word if the user
+has typed more than 20 characters
+-->
+<input type="text" ng-model="guess" placeholder="guess secret word">
+
+
+<!--
+Bonus 2) Go to Google fonts and pick out three favorite fonts and drop
+them into your head, then use the ng-style and ng-model directives to
+change the text color and font.
+
+!!! Also see <link>s in <head> element in application.html.erb !!!
+-->
+<div>
+  <h3>Change the font styles for fun and profit!</h3>
+  <button ng-click="style.font='\'Coustard\', serif';style.textColor='red'">Style 1</button>
+  <button ng-click="style.font='\'Lobster\', cursive';style.textColor='blue'">Style 2</button>
+  <button ng-click="style.font='\'Nunito\', sans-serif';style.textColor='green'">Style 3</button>
+  <button ng-click="style.font='';style.textColor=''">No style</button>
+</div>
+
+
+</div>
