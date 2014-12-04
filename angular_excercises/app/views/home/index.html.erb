@@ -1,0 +1,18 @@
+<div ng-controller = "favoriteMoviesController">
+  Show Favorites:
+  <input type="checkbox" name="checked" ng-model = "checked">
+  <ul ng-show = "checked">
+
+    <li ng-repeat = "movie in favoriteMovies | orderBy : movie.name | limitTo : 3">{{movie.name | filter : reverse}}</li>
+  </ul>
+
+  <br>
+  <span class="total">
+    I have {{favoriteMovies.length}}
+    <ng-pluralize count="favoriteMovies.length"
+      when="{'0': 'favorites',
+          'one': 'favorite',
+          'other': 'favorites'}">
+    </ng-pluralize>
+  </span>
+</div>
