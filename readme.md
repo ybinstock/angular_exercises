@@ -1,8 +1,7 @@
-# Intro to Angular Lab
+# More Angular Practice
 
-For tonight's lab we'd like you to apply some of the new Angular directives learned and in a Rails app, play around with these directives.
 
-To review, we learned about
+Before you start, think about some of the built in angular directives and topics you have learned about:
 
 ```
 ng-app
@@ -22,7 +21,7 @@ custom filters
 
 ### Objectives
 
-1. Create a new rails app and include [angular](https://angularjs.org/) in your application
+1. Create a new rails app and include [angular](https://angularjs.org/) in your application. You can do this by including the `angular-gem` or `cdn`
 
 1. Create a rails controller and template to render a basic home page
 
@@ -30,7 +29,7 @@ custom filters
 
 3. Create an array of objects called `favoriteMovies` and use the `ng-repeat` directive to iterate over the array of `favoriteMovies`.
 
-5. Add a form outside the `ng-repeat` in step `4` with an input that allows you to change the background color of the application. This will require you to look at the documentation for [ng-style](https://docs.angularjs.org/api/ng/directive/ngStyle) or review the notes.  *(Hint: Use the `backgroundColor` key instead of `background-color`)*
+5. Add a form outside the `ng-repeat` in step `4` with an input that allows you to change the background color of the application. This will require you to look at the documentation for [ng-style](https://docs.angularjs.org/api/ng/directive/ngStyle) or check out [these](https://github.com/wdi-sf-july/notes/tree/master/week_10_advanced_rails/day_3_angular_json/dusk_angular_intro/angular_intro_lesson) notes.  *(Hint: Use the `backgroundColor` key instead of `background-color`)*
 
 7. Filter your `ng-repeat` of movies and order them by name and limit the number displayed to 3
 
