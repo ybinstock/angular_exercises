@@ -10,7 +10,6 @@ ng-show
 ng-hide
 ng-style
 ng-class
-ng-list
 ng-pluralize
 ng-repeat
 ng-show
